@@ -26,18 +26,17 @@ public class LogicaGenerador {
                 int inicioM2 = 4*nf1*nc1;
                 int inicioM3 = inicioM2 + 4*nf2*nc2;
 
-                // NR : M1 + M2 + M3
-                int numPosiciones = (nf1*nc1) + (nf2*nc2) + (nf1*nc2);
-                int nr = numPosiciones * 4;
+                // NR : Accesos de cada matriz --> 2 accesos para cada for de k y 1 acceso para cada for de j
+                int nr = (nf1*nc1*nc2*2) + (nf1*nc2);
                 bw.write("NR=" + nr);
                 bw.newLine();
 
                 // NP : con base en las dvs
-                int npEnteras = nr / tp;
-                int dvsAdicionales = nr % tp;
+                int bytesPosTotales = 4*((nf1*nc1) + (nf2*nc2) + (nf1*nc2));
+                int npEnteras = bytesPosTotales / tp;
 
                 int np = npEnteras;
-                if (dvsAdicionales != 0) {
+                if (bytesPosTotales % tp != 0) {
                     np += 1;
                 }
 
@@ -72,8 +71,6 @@ public class LogicaGenerador {
                             bw.newLine();
                             bw.write(dirM2);
                             bw.newLine();
-
-                            nr++;
 
                         }
 
