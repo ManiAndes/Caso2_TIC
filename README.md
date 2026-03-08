@@ -1,18 +1,19 @@
-## Getting Started
+202423975 - Manuel Mejía
+202423192 - Isabella Bracho 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Generador de Archivos - DVs
 
-## Folder Structure
+Para generar el archivo con las direcciones virtuales se debe compilar ambos archivos dentro del `src` folder y ejecutar Main.java con los command-line arguments requeridos de la siguiente manera:
 
-The workspace contains two folders by default, where:
+java Main <nf1> <nc1> <nf2> <nc2> <tp> <nombreArchivo>
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+nf1 : número de filas M1
+nc1 : número de columnas M1
+nf2 : número de filas M2
+nc2 : número de columnas M2
+tp : tamaño de página
+nombreArchivo : nombre del archivo de salida
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+# Ejemplo
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+java Main 4 6 6 8 64 archivo_dv.txt
