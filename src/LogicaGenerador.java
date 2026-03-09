@@ -64,8 +64,8 @@ public class LogicaGenerador {
                             int numOffsetM2 = bytePosM2 % tp;
 
                             // Insertar en archivo
-                            String dirM1 = String.format("[M1-%d-%d], %d, %d", i, k, numPaginaM1, numOffsetM1);
-                            String dirM2 = String.format("[M2-%d-%d], %d, %d", k, j, numPaginaM2, numOffsetM2);
+                            String dirM1 = String.format("[M1-%d-%d],%d,%d", i, k, numPaginaM1, numOffsetM1);
+                            String dirM2 = String.format("[M2-%d-%d],%d,%d", k, j, numPaginaM2, numOffsetM2);
 
                             bw.write(dirM1);
                             bw.newLine();
@@ -82,7 +82,7 @@ public class LogicaGenerador {
                         int numOffsetM3 = bytePosM3 % tp;
 
                         // Insertar en archivo
-                        String dirM3 = String.format("[M3-%d-%d], %d, %d", i, j, numPaginaM3, numOffsetM3);
+                        String dirM3 = String.format("[M3-%d-%d],%d,%d", i, j, numPaginaM3, numOffsetM3);
                         bw.write(dirM3);
                         bw.newLine();
 
